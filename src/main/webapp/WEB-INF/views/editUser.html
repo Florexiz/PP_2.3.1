@@ -5,7 +5,7 @@
     <title>Edit User</title>
 </head>
 <body>
-    <form th:action="@{/edit}" th:method="PATCH" th:object="${user}" style="text-align: center">
+    <form th:action="@{/edit}" th:method="PUT" th:object="${user}" style="text-align: center">
         <label for="id">ID</label><br>
         <input type="text" id="id" th:field="*{id}" readonly><br><br>
 

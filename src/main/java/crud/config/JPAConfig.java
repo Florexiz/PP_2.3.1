@@ -1,5 +1,6 @@
 package crud.config;
 
+import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -31,7 +32,8 @@ public class JPAConfig {
         emf.setPackagesToScan("crud.model");
         emf.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         Properties prop = new Properties();
-        prop.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        prop.setProperty(Environment.HBM2DDL_AUTO, "create-drop");
+        prop.setProperty(Environment.DIALECT, "org.hibernate.dialect.MySQL5Dialect");
         emf.setJpaProperties(prop);
         return emf;
     }

@@ -3,22 +3,18 @@ package crud.model;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "crudUser")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     private String name;
 
-    @Column
     private String surname;
 
-    @Column
     private String city;
 
-    @Column
     private String email;
 
     public User() {

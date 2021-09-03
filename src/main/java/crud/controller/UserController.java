@@ -13,7 +13,7 @@ public class UserController {
 
     public UserController(UserService userService) {
         this.userService = userService;
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 1; i <= 25; i++) {
             userService.addUser(new User(
                     "Name" + i,
                     "Surname" + i,
@@ -53,8 +53,8 @@ public class UserController {
         return "editUser";
     }
 
-    @PatchMapping("/edit")
-    public String patchUser(@ModelAttribute User user) {
+    @PutMapping("/edit")
+    public String updateUser(@ModelAttribute User user) {
         userService.editUser(user);
         return "redirect:/";
     }
